@@ -25,7 +25,7 @@ Gợi ý chia vai:
 
 | Người | Vai | Commit | Test đã thêm hoặc sửa |
 | --- | --- | --- | --- |
-| | | | |
+| Bùi Anh Dũng | Workflow, single, test CP4 | (điền hash sau khi commit) | `src/tests/test_cp4_approval_secret.py`: `test_broken_approval_never_writes_a_refund` (6 ca approval hỏng × workflow/single), `test_no_secret_or_personal_data_leaves_the_shape` (14 claim × seed 11, 55 × workflow/single) |
 
 ## Cá nhân
 
