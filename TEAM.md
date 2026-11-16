@@ -11,8 +11,8 @@
 
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
-|   1 | Bùi Anh Dũng       | 2A202603687     |<26ai.dungba2@vinuni.edu.vn>       | <https://github.com/buianhdung2kar5>       | Workflow, sigle, benchmark, ADR        |
-|   2 |        |      |       |        |         |
+|   1 | Bùi Anh Dũng | 2A202603687 | <26ai.dungba2@vinuni.edu.vn> | <https://github.com/buianhdung2kar5> | Workflow, single, test CP4, benchmark, ADR |
+|   2 | Lê Minh Phụng | 2A202603693 | 26ai.phunglm@vinuni.edu.vn | okuminhphen | Orchestrator, Handoff, kiểm thử crash/resume và rà soát trace |
 
 Gợi ý chia vai:
 
@@ -25,7 +25,8 @@ Gợi ý chia vai:
 
 | Người | Vai | Commit | Test đã thêm hoặc sửa |
 | --- | --- | --- | --- |
-| Bùi Anh Dũng | Workflow, single, test CP4 | (điền hash sau khi commit) | `src/tests/test_cp4_approval_secret.py`: `test_broken_approval_never_writes_a_refund` (6 ca approval hỏng × workflow/single), `test_no_secret_or_personal_data_leaves_the_shape` (14 claim × seed 11, 55 × workflow/single) |
+| Bùi Anh Dũng | Workflow, single, test CP4 | `6bc174c` | `test_broken_approval_never_writes_a_refund` (6 ca approval hỏng × workflow/single), `test_no_secret_or_personal_data_leaves_the_shape` (14 claim × seed 11, 55 × workflow/single) |
+| Lê Minh Phụng | Orchestrator, Handoff, kiểm thử crash/resume và rà soát trace | `b86baa3` | `test_orchestrator_traces_a_read_only_handoff` |
 
 ## Cá nhân
 

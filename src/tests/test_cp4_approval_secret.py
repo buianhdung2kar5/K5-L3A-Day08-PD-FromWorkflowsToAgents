@@ -20,7 +20,7 @@ from lab8.db import connect, init_store
 from lab8.shapes import SHAPES
 from tests.conftest import CLAIMS, WORLD
 
-SHAPES_UNDER_TEST = ["workflow", "single"]
+SHAPES_UNDER_TEST = ["workflow", "single", "orchestrator"]
 CLAIM_ID = "C-001"  # order O-107, delayed 4 days, quote 35.000, approval A-001
 QUOTE = 35000
 
