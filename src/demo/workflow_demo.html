@@ -203,6 +203,7 @@
     <span class="brand">LogiX Lab 8 · Demo</span>
     <a class="wf" href="workflow_demo.html" aria-current="page">A · Workflow</a>
     <a class="sg" href="single_demo.html" >B · Single agent</a>
+    <a href="cp3_crash_demo.html">CP3 · Crash</a>
   </nav>
 
   <header class="top">
@@ -398,7 +399,7 @@ function finishStep(c, shape) {
   rows.push(["so với nhãn", run.passed
     ? `<span class="badge ok">Khớp nhãn ${esc(c.matrix_id)}</span> <span class="hint">kỳ vọng ${esc(exp.status)}, ${money(exp.proposal_amount)}, ledger ${money(exp.refund_vnd)}</span>`
     : `<span class="badge bad">Lệch nhãn</span> ${esc(run.pass_reason)}`]);
-  const crash = c.matrix_id === "T12" ? callout('Kịch bản crash giữa chừng (T12) chưa mô phỏng ở đây: shape chưa truyền <span class="mono">crash_at</span> (việc của CP3).') : "";
+  const crash = c.matrix_id === "T12" ? callout('Kịch bản crash giữa chừng của T12: xem trang <a href="cp3_crash_demo.html">CP3 · Crash</a>. Shape đã truyền <span class="mono">crash_at</span> xuống host.') : "";
   return { state: "done", short: STATUS[r.status].label,
     html: kv(rows) + `<details class="trace"><summary>Trace (${run.trace.length} sự kiện, không chứa dữ liệu nhạy cảm)</summary><pre class="trace">${esc(JSON.stringify(run.trace, null, 1))}</pre></details>` + crash };
 }
