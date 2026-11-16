@@ -9,10 +9,10 @@
 
 ## Thành viên
 
-| STT | Họ tên | MSSV | Email | GitHub | Vai trò |
-| --: | ------ | ---- | ----- | ------ | ------- |
-|   1 |        |      |       |        |         |
-|   2 |        |      |       |        |         |
+| STT | Họ tên        | MSSV        | Email                      | GitHub      | Vai trò                                                       |
+| --: | ------------- | ----------- | -------------------------- | ----------- | ------------------------------------------------------------- |
+|   1 |               |             |                            |             |                                                               |
+|   2 | Lê Minh Phụng | 2A202603693 | 26ai.phunglm@vinuni.edu.vn | okuminhphen | Orchestrator, Handoff, kiểm thử crash/resume và rà soát trace |
 
 Gợi ý chia vai:
 
@@ -24,8 +24,8 @@ Gợi ý chia vai:
 `python -m lab8.check_submission` đọc bảng này bằng máy: giữ nguyên tiêu đề `## Bảng đóng góp` và các cột. Mỗi người một dòng: commit có nội dung và ít nhất một test đã thêm hoặc sửa.
 
 | Người | Vai | Commit | Test đã thêm hoặc sửa |
-| --- | --- | --- | --- |
-| | | | |
+| ----- | --- | ------ | --------------------- |
+| Lê Minh Phụng | Orchestrator, Handoff, kiểm thử crash/resume và rà soát trace | `b86baa3` | `test_orchestrator_traces_a_read_only_handoff` |
 
 ## Cá nhân
 
