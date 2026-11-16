@@ -54,7 +54,6 @@ def run_claim(
 
 
 def _run(conn, claim_id: str, *, seed: int, crash_at: str | None) -> RunResult:
-    del crash_at
     budget = Budget()
     trace = Trace(make_run_id(SHAPE, claim_id, seed))
 
@@ -94,7 +93,8 @@ def _run(conn, claim_id: str, *, seed: int, crash_at: str | None) -> RunResult:
     if amount <= 0:
         return _done(conn, claim_id, seed, "denied", 0, budget, trace)
 
-    result = issue_refund(conn, claim_id, amount)
+    # crash_at goes straight to the host. InjectedCrash is not caught here so the crash is real.
+    result = issue_refund(conn, claim_id, amount, crash_at=crash_at)
     trace.add("host", {"ok": result["ok"], "reason": result["reason"], "conflict": result["conflict"]})
 
     if result["ok"]:

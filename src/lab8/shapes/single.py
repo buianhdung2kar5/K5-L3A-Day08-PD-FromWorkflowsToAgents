@@ -46,8 +46,6 @@ def run_claim(
 
 
 def _run(conn, claim_id: str, *, seed: int, crash_at: str | None) -> RunResult:
-    # TODO CP3: pass crash_at to issue_refund and let InjectedCrash propagate.
-    del crash_at
     budget = Budget()
     trace = Trace(make_run_id(SHAPE, claim_id, seed))
     memory: dict = {}  # tool outputs seen so far; run_react only passes the last one to decide
@@ -108,7 +106,8 @@ def _run(conn, claim_id: str, *, seed: int, crash_at: str | None) -> RunResult:
         return _done(conn, claim_id, seed, "denied", 0, budget, trace)
 
     # Pass the FULL quote. The host subtracts earlier refunds on the same order.
-    result = issue_refund(conn, claim_id, amount)
+    # crash_at goes straight to the host. InjectedCrash is not caught here so the crash is real.
+    result = issue_refund(conn, claim_id, amount, crash_at=crash_at)
     trace.add("host", {"ok": result["ok"], "reason": result["reason"], "conflict": result["conflict"]})
     if result["ok"]:
         return _done(conn, claim_id, seed, "resolved", amount, budget, trace)
