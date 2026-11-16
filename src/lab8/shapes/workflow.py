@@ -29,8 +29,14 @@ ones. `lab8.trace.Trace` does this; your own tracer is fine if it matches.
 
 from __future__ import annotations
 
-from lab8.schemas import RunResult
-from lab8.shapes.common import not_implemented
+from lab8.db import connect
+from lab8.durability import issue_refund
+from lab8.runtime import dispatch
+from lab8.schemas import Budget, RunResult, make_run_id
+from lab8.shapes.common import finish
+from lab8.trace import Trace
+
+SHAPE = "workflow"
 
 
 def run_claim(
@@ -40,7 +46,82 @@ def run_claim(
     store_path: str,
     crash_at: str | None = None,
 ) -> RunResult:
-    # TODO CP2 (student): thay stub này bằng shape workflow theo các bước ở docstring đầu file.
-    # TODO CP3 (student): truyền crash_at vào durability.issue_refund, không bắt InjectedCrash.
-    del store_path, crash_at
-    return not_implemented("workflow", claim_id, seed)
+    conn = connect(store_path)
+    try:
+        return _run(conn, claim_id, seed=seed, crash_at=crash_at)
+    finally:
+        conn.close()
+
+
+def _run(conn, claim_id: str, *, seed: int, crash_at: str | None) -> RunResult:
+    del crash_at
+    budget = Budget()
+    trace = Trace(make_run_id(SHAPE, claim_id, seed))
+
+    claim = dispatch(conn, budget, "get_claim_view", {"claim_id": claim_id}, worker=False)
+    trace.add("claim", {"found": claim.get("found", False)})
+    if not claim.get("found"):
+        return _done(conn, claim_id, seed, "failed", 0, budget, trace, "unknown_claim")
+
+    principal_id = claim["principal_id"]
+    order_id = claim.get("order_id")
+
+    if not order_id:
+        trace.add("decision", {"status": "needs_info"})
+        return _done(conn, claim_id, seed, "needs_info", 0, budget, trace)
+
+    scope = dispatch(
+        conn,
+        budget,
+        "lookup_order",
+        {"order_id": order_id, "principal_id": principal_id},
+        worker=False,
+    )
+    trace.add("order", {"visible": scope.get("visible", False), "reason": scope.get("reason")})
+    if not scope.get("visible"):
+        return _done(conn, claim_id, seed, "escalated", 0, budget, trace)
+
+    quote = dispatch(
+        conn,
+        budget,
+        "compute_compensation",
+        {"order": scope["order"]},
+        worker=False,
+    )
+    amount = int(quote["amount_vnd"])
+    trace.add("quote", {"amount_vnd": amount, "reason": quote.get("reason")})
+
+    if amount <= 0:
+        return _done(conn, claim_id, seed, "denied", 0, budget, trace)
+
+    result = issue_refund(conn, claim_id, amount)
+    trace.add("host", {"ok": result["ok"], "reason": result["reason"], "conflict": result["conflict"]})
+
+    if result["ok"]:
+        return _done(conn, claim_id, seed, "resolved", amount, budget, trace)
+    if result["conflict"]:
+        return _done(conn, claim_id, seed, "failed", amount, budget, trace, result["reason"])
+    return _done(conn, claim_id, seed, "denied", amount, budget, trace, result["reason"])
+
+
+def _done(
+    conn,
+    claim_id: str,
+    seed: int,
+    status: str,
+    proposal_amount: int,
+    budget: Budget,
+    trace: Trace,
+    error_reason: str | None = None,
+) -> RunResult:
+    return finish(
+        conn,
+        shape=SHAPE,
+        claim_id=claim_id,
+        seed=seed,
+        status=status,
+        proposal_amount=proposal_amount,
+        budget=budget,
+        trace=trace,
+        error_reason=error_reason,
+    )
