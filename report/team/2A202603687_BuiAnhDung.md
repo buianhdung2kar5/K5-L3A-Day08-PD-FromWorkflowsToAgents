@@ -1,8 +1,4 @@
-# Báo cáo cá nhân — MSSV_HoTen
-
-Đổi tên file theo quy tắc `MSSV_HoTen.md`.
-
-Ví dụ: `20241234_NguyenVanAn.md`.
+# Báo cáo cá nhân — Bùi Anh Dũng (2A202603687)
 
 ## 1. Thông tin thành viên
 
