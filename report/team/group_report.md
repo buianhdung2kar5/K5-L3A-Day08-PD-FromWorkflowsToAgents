@@ -6,7 +6,7 @@ Tối đa 5 trang ngoài phụ lục. Số liệu lấy từ file trong `src/rep
 
 - Tên nhóm: PD (lớp L3A)
 - Thành viên: xem `TEAM.md`
-- Commit chốt (trùng `report/team/decision_adr.md`): `a7f3549`
+- Commit chốt (trùng `report/team/decision_adr.md`): `6f5f8ad`
 - Shape nộp: workflow
 
 ## 2. Mục tiêu và cách tiếp cận

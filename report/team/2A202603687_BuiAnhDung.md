@@ -16,7 +16,8 @@ Tôi phụ trách shape **workflow** và **single**, các test approval hỏng v
 - `c9bc306`: viết `workflow.py` theo 7 bước cố định. `cf0071e` và `c357db1`: thêm `single.py` (vòng ReAct tối đa 8 bước) và truyền `crash_at` vào host cho cả hai shape (CP3).
 - `6bc174c`: thêm `src/tests/test_cp4_approval_secret.py` và `src/reports/crash.json`. Test `test_broken_approval_never_writes_a_refund` chạy 6 ca approval hỏng cho mỗi shape. Test `test_no_secret_or_personal_data_leaves_the_shape` quét kết quả, trace và stdout của 14 claim × seed 11, 55.
 - `537db2e`: gộp nhánh `feature/orchestrator` của Phụng, giải quyết xung đột `TEAM.md`, thêm `orchestrator` vào `SHAPES_UNDER_TEST` của test CP4.
-- `a7f3549`: thêm bonus B2 (`src/bonus/`, `test_bonus_mast.py`, `bonus_report.md`) và đây là commit chốt.
+- `a7f3549`: thêm bonus B2 (`src/bonus/`, `test_bonus_mast.py`, `bonus_report.md`).
+- `6f5f8ad`: chuyển 2 test luật tagger sang Phụng, cập nhật báo cáo và là commit chốt.
 - `7b97e57` và `312a17d`: thêm `src/reports/benchmark.json`, điền `decision_adr.md` (chọn workflow) và ghi commit hash. Sau đó điền `research_card.md` (R2) và `group_report.md`.
 
 Quyết định kỹ thuật:
