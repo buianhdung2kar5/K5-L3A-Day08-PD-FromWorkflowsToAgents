@@ -8,26 +8,35 @@ Ví dụ: `20241234_NguyenVanAn.md`.
 
 - Họ tên: Bùi Anh Dũng
 - MSSV:2A202603687
-- Email:26ai.dungba2@vinuni.edu.vn
-- GitHub:https://github.com/buianhdung2kar5
+- Email:<26ai.dungba2@vinuni.edu.vn>
+- GitHub:<https://github.com/buianhdung2kar5>
 
 ## 2. Phần việc phụ trách
 
-Shape, module hoặc phần báo cáo bạn phụ trách.
-
-...
+Tôi phụ trách shape **workflow** và **single**, các test approval hỏng và rò rỉ secret ở CP4, benchmark, ADR và research card (R2). Shape nhóm nộp là workflow. Phụng phụ trách orchestrator và handoff.
 
 ## 3. Đóng góp cụ thể
 
-Commit chính (hash), test đã thêm hoặc sửa, quyết định kỹ thuật bạn đưa ra.
+- `c9bc306`: viết `workflow.py` theo 7 bước cố định. `cf0071e` và `c357db1`: thêm `single.py` (vòng ReAct tối đa 8 bước) và truyền `crash_at` vào host cho cả hai shape (CP3).
+- `6bc174c`: thêm `src/tests/test_cp4_approval_secret.py` và `src/reports/crash.json`. Test `test_broken_approval_never_writes_a_refund` chạy 6 ca approval hỏng cho mỗi shape. Test `test_no_secret_or_personal_data_leaves_the_shape` quét kết quả, trace và stdout của 14 claim × seed 11, 55.
+- `537db2e`: gộp nhánh `feature/orchestrator` của Phụng, giải quyết xung đột `TEAM.md`, thêm `orchestrator` vào `SHAPES_UNDER_TEST` của test CP4.
+- `7b97e57` và `312a17d`: thêm `src/reports/benchmark.json`, điền `decision_adr.md` (chọn workflow) và ghi commit hash. Sau đó điền `research_card.md` (R2) và `group_report.md`.
 
-...
+Quyết định kỹ thuật:
+
+- Money ở trong code. Cả hai shape gọi `compute_compensation` và không để model chọn số tiền.
+- Luôn truyền quote đầy đủ vào `issue_refund`, không tự trừ khoản đã hoàn, vì host tự trừ (T13, T14).
+- Không bắt `InjectedCrash`, nên crash thật sự lan ra và host phải tự bảo đảm không hoàn hai lần (T12).
+- Test rò rỉ so khớp theo token nguyên từ để tránh báo sai với tên món ngắn.
+- Chọn workflow vì cùng pass 1.000 với single và orchestrator, cost/success thấp nhất, không gọi model và không có variance giữa các seed.
 
 ## 4. Bằng chứng
 
-Link commit, tên test, run id hoặc trích đoạn report liên quan.
-
-...
+- Test CP4: 16 test pass lúc có hai shape. Sau khi thêm orchestrator thì toàn bộ ma trận student đạt **272 passed**, cổng host **55 passed**.
+- `src/reports/crash.json`: `crash_safety 20/20` (chạy trên host và swarm tham chiếu). Bằng chứng crash của workflow là T11, T12 trong 62 test student.
+- `src/reports/benchmark.json` (4 shape × 14 claim × 5 seed). Workflow: pass 1.000, pass^5 1.000, variance 0, cost/success 27.86. Swarm: 0.986, 0.929, 0.000816, 49.57.
+- Run id dẫn chứng: `R-workflow-C-001-s11`. Trial fail của swarm: `R-swarm-C-002-s55`.
+- `python -m lab8.check_submission`: `0 FAIL`.
 
 ## 5. Công cụ AI đã dùng
 
@@ -83,3 +92,11 @@ Công cụ, dùng vào việc gì, và bạn đã tự kiểm tra kết quả th
 2. **Vì sao trace là ranh giới bảo mật chứ không phải tiện ích debug?** Trace là file shape xuất ra ngoài. Nếu ghi claim row hay order row thô thì số điện thoại, địa chỉ, ghi chú nội bộ và secret sẽ rò ra khỏi hệ thống. Vì vậy trace chỉ ghi các sự kiện đã chọn lọc. `test_no_secret_or_personal_data_leaves_the_shape` quét kết quả, file trace và stdout của 14 claim để bảo đảm điều đó.
 
 3. **Vì sao grader fail-closed?** Khi trace thiếu (`missing_trace`), cũ (`stale_trace`), sai định dạng (`invalid_trace`) hoặc sai `run_id` (`trace_run_id_mismatch`), grader coi trial là fail thay vì bỏ qua. Nếu không, shape có thể tắt trace để giấu rò rỉ và vẫn qua. Vì vậy mọi nhánh return, kể cả `needs_info` và `escalated`, đều phải ghi trace hợp lệ.
+
+**CP5 — ba câu "Cần hiểu"**
+
+1. **Pass rate, pass^5, seed variance, cost/success là gì?** Pass rate là tỷ lệ trial đúng trên tất cả trial (workflow 70/70 = 1.000). Pass^5 là tỷ lệ claim đúng ở cả 5 seed, nên nghiêm hơn pass rate vì một seed sai là claim đó tính sai (swarm 0.929). Seed variance đo mức pass rate dao động giữa các seed, cho biết shape có ổn định không (workflow 0). Cost/success là tổng chi phí mô phỏng chia cho số trial thành công, để so shape tốn bao nhiêu cho mỗi ca đúng (workflow 27.86, swarm 49.57). Chi phí chỉ là VND mô phỏng, không phải hóa đơn API.
+
+2. **Vì sao swarm fail T02 ở seed 55?** Ở seed chia hết cho 5, swarm tin số ngày trễ ghi trong ticket (5) thay vì cột `delay_days` trong dòng order (2). Quote thành 20.000 và trả `resolved`, trong khi đúng ra là `denied`. Trace `R-swarm-C-002-s55` có event `model_override` đặt `delay_days` = 5. Workflow không bị vì số ngày chỉ lấy từ dòng order.
+
+3. **Điều kiện nào làm quyết định kiến trúc đảo lại?** Hiện không có shape nào qua mặt workflow: orchestrator bằng pass nhưng cost cao hơn khoảng 56%, swarm thấp hơn. Nhóm chỉ đổi khi trên bộ hidden hoặc corpus lớn hơn workflow dưới ngưỡng 0.75 hoặc thua rõ một shape khác trên cùng seed, claim cần suy luận mà quy tắc cố định không phủ được, và mức tăng pass lớn hơn mức tăng cost và variance.

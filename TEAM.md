@@ -5,7 +5,7 @@
 - Tên nhóm:PD
 - Lớp: L3A
 - Repo nhóm: `K5-L3A-DAY08-PD-FromWorkflowsToAgents` (xem [SUBMISSION.md](SUBMISSION.md))
-- URL repo, nhánh nộp, commit chốt:
+- URL repo, nhánh nộp, commit chốt: https://github.com/buianhdung2kar5/K5-L3A-Day08-PD-FromWorkflowsToAgents, nhánh `main`, commit `7b97e57`
 
 ## Thành viên
 
