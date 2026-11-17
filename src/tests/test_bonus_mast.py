@@ -59,20 +59,6 @@ def test_a_correct_run_is_not_tagged(tmp_path, monkeypatch):
         assert tag["category"] == "unclassified"
 
 
-def test_override_event_is_verification_failure_and_missing_trace_is_system_design():
-    events = [{"kind": "model_override", "payload": {"delay_days": 5}}, {"kind": "quote", "payload": {}}]
-    assert tag_trial({"status": "resolved"}, events)["category"] == "FC3"
-    assert tag_trial({"status": "error"}, [])["category"] == "FC1"
-
-
-def test_handoff_that_matches_the_order_row_is_not_misalignment():
-    events = [
-        {"kind": "order", "payload": {"visible": True, "delay_days": 4}},
-        {"kind": "handoff", "payload": {"facts": {"delay_days": 4}}},
-    ]
-    assert tag_trial({"status": "denied"}, events)["category"] == "unclassified"
-
-
 def test_cohens_kappa_known_values():
     assert cohens_kappa(["FC1", "FC2"], ["FC1", "FC2"]) == 1.0
     assert cohens_kappa(["FC1", "FC1", "FC2", "FC2"], ["FC1", "FC2", "FC1", "FC2"]) == 0.0

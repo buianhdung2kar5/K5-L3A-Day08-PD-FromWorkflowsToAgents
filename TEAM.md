@@ -5,7 +5,7 @@
 - Tên nhóm:PD
 - Lớp: L3A
 - Repo nhóm: `K5-L3A-DAY08-PD-FromWorkflowsToAgents` (xem [SUBMISSION.md](SUBMISSION.md))
-- URL repo, nhánh nộp, commit chốt: https://github.com/buianhdung2kar5/K5-L3A-Day08-PD-FromWorkflowsToAgents, nhánh `main`, commit `7b97e57`
+- URL repo, nhánh nộp, commit chốt: https://github.com/buianhdung2kar5/K5-L3A-Day08-PD-FromWorkflowsToAgents, nhánh `main`, commit `a7f3549`
 
 ## Thành viên
 
@@ -25,8 +25,8 @@ Gợi ý chia vai:
 
 | Người | Vai | Commit | Test đã thêm hoặc sửa |
 | --- | --- | --- | --- |
-| Bùi Anh Dũng | Workflow, single, test CP4, bonus B2 | `6bc174c` | `test_broken_approval_never_writes_a_refund` (6 ca approval hỏng × workflow/single), `test_no_secret_or_personal_data_leaves_the_shape` (14 claim × seed 11, 55 × workflow/single); bonus B2 trong `src/tests/test_bonus_mast.py`: `test_each_variant_fails_somewhere_and_is_tagged_with_its_group` (3 variant), `test_a_correct_run_is_not_tagged`, `test_override_event_is_verification_failure_and_missing_trace_is_system_design`, `test_handoff_that_matches_the_order_row_is_not_misalignment`, `test_cohens_kappa_known_values` |
-| Lê Minh Phụng | Orchestrator, Handoff, kiểm thử crash/resume và rà soát trace | `b86baa3` | `test_orchestrator_traces_a_read_only_handoff` |
+| Bùi Anh Dũng | Workflow, single, test CP4, bonus B2 | `6bc174c` | `test_broken_approval_never_writes_a_refund` (6 ca approval hỏng × workflow/single), `test_no_secret_or_personal_data_leaves_the_shape` (14 claim × seed 11, 55 × workflow/single); bonus B2 trong `src/tests/test_bonus_mast.py`: `test_each_variant_fails_somewhere_and_is_tagged_with_its_group` (3 variant), `test_a_correct_run_is_not_tagged`, `test_cohens_kappa_known_values` |
+| Lê Minh Phụng | Orchestrator, Handoff, kiểm thử crash/resume và rà soát trace | `b86baa3` | `test_orchestrator_traces_a_read_only_handoff`; bonus B2 trong `src/tests/test_bonus_mast_rules.py`: `test_handoff_that_matches_the_order_row_is_not_misalignment`, `test_override_event_is_verification_failure_and_missing_trace_is_system_design` |
 
 ## Cá nhân
 

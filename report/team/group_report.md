@@ -6,7 +6,7 @@ Tối đa 5 trang ngoài phụ lục. Số liệu lấy từ file trong `src/rep
 
 - Tên nhóm: PD (lớp L3A)
 - Thành viên: xem `TEAM.md`
-- Commit chốt (trùng `report/team/decision_adr.md`): `7b97e57`
+- Commit chốt (trùng `report/team/decision_adr.md`): `a7f3549`
 - Shape nộp: workflow
 
 ## 2. Mục tiêu và cách tiếp cận
@@ -27,7 +27,7 @@ Nhóm có hai người. Dũng làm workflow, single, test approval và rò rỉ 
 
 **Trace.** Mọi nhánh return, kể cả `needs_info` và `escalated`, đều ghi trace bằng `lab8.trace.Trace` theo contract v1. Workflow ghi các event `claim` (chỉ `found`), `order` (`visible`, `reason`), `quote`, `host` và `decision`. Trace không ghi claim row hay order row thô nên không có phone, address, internal note, tên món, `parent_secret` hay `raw_headers`. Handoff được sanitize bằng allowlist trong `handoff.py`, không dùng tóm tắt bằng LLM vì tóm tắt không bảo đảm đã bỏ dữ liệu nhạy cảm.
 
-**Kiểm thử thêm của nhóm.** `src/tests/test_cp4_approval_secret.py` kiểm 6 ca approval hỏng (thiếu, của claim khác, bị chuyển sang claim khác, thu hồi, hết hạn, số tiền bằng 0) cho cả ba shape: mỗi ca phải `denied`, không có dòng ledger và đúng một audit `policy_denied` với lý do đúng. Test thứ hai quét kết quả, file trace và stdout của 14 claim × seed 11, 55 để tìm dữ liệu cá nhân và secret. Phụng thêm `test_orchestrator_traces_a_read_only_handoff`.
+**Kiểm thử thêm của nhóm.** `src/tests/test_cp4_approval_secret.py` kiểm 6 ca approval hỏng (thiếu, của claim khác, bị chuyển sang claim khác, thu hồi, hết hạn, số tiền bằng 0) cho cả ba shape: mỗi ca phải `denied`, không có dòng ledger và đúng một audit `policy_denied` với lý do đúng. Test thứ hai quét kết quả, file trace và stdout của 14 claim × seed 11, 55 để tìm dữ liệu cá nhân và secret. Phụng thêm `test_orchestrator_traces_a_read_only_handoff` và, cho bonus B2, hai test luật của tagger trong `src/tests/test_bonus_mast_rules.py`.
 
 ## 4. Kết quả
 

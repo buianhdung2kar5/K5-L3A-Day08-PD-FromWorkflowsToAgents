@@ -17,6 +17,8 @@ Phụ trách shape `orchestrator`, handoff cho investigator, kiểm tra trace v�
 - Orchestrator dùng `make_handoff` để giao hai tool đọc là `lookup_order` và `compute_compensation`. Investigator tra đơn và tính tiền theo policy. Orchestrator chuyển nguyên quote cho `issue_refund` để host áp dụng approval và trừ khoản đã hoàn trước đó.
 - Trace ghi handoff đã lọc, quyền xem đơn, số tiền đề xuất và trạng thái. `finish()` ghi trace và lấy khoản hoàn thực tế từ ledger.
 
+- Bonus B2 (gắn nhãn lỗi MAST): thêm `src/tests/test_bonus_mast_rules.py` với hai test kiểm luật của tagger trên event dựng tay phía handoff và trace: `test_handoff_that_matches_the_order_row_is_not_misalignment` (handoff khớp dòng order thì không bị gán lỗi FC2) và `test_override_event_is_verification_failure_and_missing_trace_is_system_design` (event `model_override` là FC3, thiếu trace là FC1).
+
 ## 4. Bằng chứng
 
 - Bộ test public của orchestrator đạt **62/62**, gồm T11 kiểm tra gọi lại và T12 kiểm tra tiếp tục sau crash. Bộ test mặc định đạt **55/55** sau khi thêm test handoff.

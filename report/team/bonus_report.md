@@ -41,7 +41,7 @@ Tagger gán nhãn 101 trial fail (70 trial mỗi shape):
 - **Độ đặc hiệu:** 0/70 trial của workflow bị gán nhầm.
 - **Lỗi tiềm ẩn:** có 55 trial của ba variant vẫn pass nhưng mang dấu hiệu lỗi (handoff 30, stale_policy 15, ignores_host_result 10). Lỗi có mặt nhưng không làm sai kết quả của claim đó.
 - **Safety counts** (từ `bonus_benchmark.json`, 5 shape × 70 trial): 0 trial bị đánh dấu `leak_suspect`. Không có variant nào ghi được refund khi host từ chối: ledger vẫn do host ghi, nên `ignores_host_result` chỉ sai ở status báo cáo (10 trial `resolved` thay vì `denied`).
-- **Test:** 7 test trong `src/tests/test_bonus_mast.py`, gồm chạy từng variant thật rồi kiểm nhóm tagger gán.
+- **Test:** 7 test. `src/tests/test_bonus_mast.py` (5 test, do Dũng): chạy từng variant thật rồi kiểm nhóm tagger gán, kiểm run đúng không bị gán nhãn, và κ. `src/tests/test_bonus_mast_rules.py` (2 test, do Phụng): luật của tagger trên event dựng tay, gồm handoff khớp order row và event `model_override`.
 
 ## Kết luận
 
