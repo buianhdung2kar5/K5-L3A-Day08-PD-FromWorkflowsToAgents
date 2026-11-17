@@ -1,0 +1,1047 @@
+{
+  "source": "reports/bonus_benchmark.json",
+  "failed_trials": 101,
+  "by_shape_and_category": {
+    "handoff_drops_delay": {
+      "FC2": 35
+    },
+    "ignores_host_result": {
+      "FC3": 10
+    },
+    "stale_policy": {
+      "FC1": 55
+    },
+    "swarm": {
+      "FC3": 1
+    }
+  },
+  "clean_shapes": [
+    "workflow"
+  ],
+  "clean_passing_trials_checked": 70,
+  "clean_passing_trials_wrongly_tagged": 0,
+  "passing_trials_with_latent_defect": {
+    "handoff_drops_delay": 30,
+    "stale_policy": 15,
+    "ignores_host_result": 10
+  },
+  "tags": [
+    {
+      "run_id": "R-swarm-C-002-s55",
+      "shape": "swarm",
+      "claim_id": "C-002",
+      "seed": 55,
+      "benchmark_reason": "status resolved != denied",
+      "category": "FC3",
+      "mode": "incorrect_verification",
+      "reason": "model_override {'delay_days': 5} was accepted without comparing it to the order row"
+    },
+    {
+      "run_id": "R-handoff_drops_delay-C-001-s11",
+      "shape": "handoff_drops_delay",
+      "claim_id": "C-001",
+      "seed": 11,
+      "benchmark_reason": "status denied != resolved",
+      "category": "FC2",
+      "mode": "information_withholding",
+      "reason": "handoff facts delay_days=0 but order lookup returned 4"
+    },
+    {
+      "run_id": "R-handoff_drops_delay-C-001-s22",
+      "shape": "handoff_drops_delay",
+      "claim_id": "C-001",
+      "seed": 22,
+      "benchmark_reason": "status denied != resolved",
+      "category": "FC2",
+      "mode": "information_withholding",
+      "reason": "handoff facts delay_days=0 but order lookup returned 4"
+    },
+    {
+      "run_id": "R-handoff_drops_delay-C-001-s33",
+      "shape": "handoff_drops_delay",
+      "claim_id": "C-001",
+      "seed": 33,
+      "benchmark_reason": "status denied != resolved",
+      "category": "FC2",
+      "mode": "information_withholding",
+      "reason": "handoff facts delay_days=0 but order lookup returned 4"
+    },
+    {
+      "run_id": "R-handoff_drops_delay-C-001-s44",
+      "shape": "handoff_drops_delay",
+      "claim_id": "C-001",
+      "seed": 44,
+      "benchmark_reason": "status denied != resolved",
+      "category": "FC2",
+      "mode": "information_withholding",
+      "reason": "handoff facts delay_days=0 but order lookup returned 4"
+    },
+    {
+      "run_id": "R-handoff_drops_delay-C-001-s55",
+      "shape": "handoff_drops_delay",
+      "claim_id": "C-001",
+      "seed": 55,
+      "benchmark_reason": "status denied != resolved",
+      "category": "FC2",
+      "mode": "information_withholding",
+      "reason": "handoff facts delay_days=0 but order lookup returned 4"
+    },
+    {
+      "run_id": "R-handoff_drops_delay-C-007-s11",
+      "shape": "handoff_drops_delay",
+      "claim_id": "C-007",
+      "seed": 11,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC2",
+      "mode": "information_withholding",
+      "reason": "handoff facts delay_days=0 but order lookup returned 4"
+    },
+    {
+      "run_id": "R-handoff_drops_delay-C-007-s22",
+      "shape": "handoff_drops_delay",
+      "claim_id": "C-007",
+      "seed": 22,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC2",
+      "mode": "information_withholding",
+      "reason": "handoff facts delay_days=0 but order lookup returned 4"
+    },
+    {
+      "run_id": "R-handoff_drops_delay-C-007-s33",
+      "shape": "handoff_drops_delay",
+      "claim_id": "C-007",
+      "seed": 33,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC2",
+      "mode": "information_withholding",
+      "reason": "handoff facts delay_days=0 but order lookup returned 4"
+    },
+    {
+      "run_id": "R-handoff_drops_delay-C-007-s44",
+      "shape": "handoff_drops_delay",
+      "claim_id": "C-007",
+      "seed": 44,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC2",
+      "mode": "information_withholding",
+      "reason": "handoff facts delay_days=0 but order lookup returned 4"
+    },
+    {
+      "run_id": "R-handoff_drops_delay-C-007-s55",
+      "shape": "handoff_drops_delay",
+      "claim_id": "C-007",
+      "seed": 55,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC2",
+      "mode": "information_withholding",
+      "reason": "handoff facts delay_days=0 but order lookup returned 4"
+    },
+    {
+      "run_id": "R-handoff_drops_delay-C-008-s11",
+      "shape": "handoff_drops_delay",
+      "claim_id": "C-008",
+      "seed": 11,
+      "benchmark_reason": "status denied != resolved",
+      "category": "FC2",
+      "mode": "information_withholding",
+      "reason": "handoff facts delay_days=0 but order lookup returned 4"
+    },
+    {
+      "run_id": "R-handoff_drops_delay-C-008-s22",
+      "shape": "handoff_drops_delay",
+      "claim_id": "C-008",
+      "seed": 22,
+      "benchmark_reason": "status denied != resolved",
+      "category": "FC2",
+      "mode": "information_withholding",
+      "reason": "handoff facts delay_days=0 but order lookup returned 4"
+    },
+    {
+      "run_id": "R-handoff_drops_delay-C-008-s33",
+      "shape": "handoff_drops_delay",
+      "claim_id": "C-008",
+      "seed": 33,
+      "benchmark_reason": "status denied != resolved",
+      "category": "FC2",
+      "mode": "information_withholding",
+      "reason": "handoff facts delay_days=0 but order lookup returned 4"
+    },
+    {
+      "run_id": "R-handoff_drops_delay-C-008-s44",
+      "shape": "handoff_drops_delay",
+      "claim_id": "C-008",
+      "seed": 44,
+      "benchmark_reason": "status denied != resolved",
+      "category": "FC2",
+      "mode": "information_withholding",
+      "reason": "handoff facts delay_days=0 but order lookup returned 4"
+    },
+    {
+      "run_id": "R-handoff_drops_delay-C-008-s55",
+      "shape": "handoff_drops_delay",
+      "claim_id": "C-008",
+      "seed": 55,
+      "benchmark_reason": "status denied != resolved",
+      "category": "FC2",
+      "mode": "information_withholding",
+      "reason": "handoff facts delay_days=0 but order lookup returned 4"
+    },
+    {
+      "run_id": "R-handoff_drops_delay-C-010-s11",
+      "shape": "handoff_drops_delay",
+      "claim_id": "C-010",
+      "seed": 11,
+      "benchmark_reason": "status denied != resolved",
+      "category": "FC2",
+      "mode": "information_withholding",
+      "reason": "handoff facts delay_days=0 but order lookup returned 4"
+    },
+    {
+      "run_id": "R-handoff_drops_delay-C-010-s22",
+      "shape": "handoff_drops_delay",
+      "claim_id": "C-010",
+      "seed": 22,
+      "benchmark_reason": "status denied != resolved",
+      "category": "FC2",
+      "mode": "information_withholding",
+      "reason": "handoff facts delay_days=0 but order lookup returned 4"
+    },
+    {
+      "run_id": "R-handoff_drops_delay-C-010-s33",
+      "shape": "handoff_drops_delay",
+      "claim_id": "C-010",
+      "seed": 33,
+      "benchmark_reason": "status denied != resolved",
+      "category": "FC2",
+      "mode": "information_withholding",
+      "reason": "handoff facts delay_days=0 but order lookup returned 4"
+    },
+    {
+      "run_id": "R-handoff_drops_delay-C-010-s44",
+      "shape": "handoff_drops_delay",
+      "claim_id": "C-010",
+      "seed": 44,
+      "benchmark_reason": "status denied != resolved",
+      "category": "FC2",
+      "mode": "information_withholding",
+      "reason": "handoff facts delay_days=0 but order lookup returned 4"
+    },
+    {
+      "run_id": "R-handoff_drops_delay-C-010-s55",
+      "shape": "handoff_drops_delay",
+      "claim_id": "C-010",
+      "seed": 55,
+      "benchmark_reason": "status denied != resolved",
+      "category": "FC2",
+      "mode": "information_withholding",
+      "reason": "handoff facts delay_days=0 but order lookup returned 4"
+    },
+    {
+      "run_id": "R-handoff_drops_delay-C-011-s11",
+      "shape": "handoff_drops_delay",
+      "claim_id": "C-011",
+      "seed": 11,
+      "benchmark_reason": "status denied != resolved",
+      "category": "FC2",
+      "mode": "information_withholding",
+      "reason": "handoff facts delay_days=0 but order lookup returned 4"
+    },
+    {
+      "run_id": "R-handoff_drops_delay-C-011-s22",
+      "shape": "handoff_drops_delay",
+      "claim_id": "C-011",
+      "seed": 22,
+      "benchmark_reason": "status denied != resolved",
+      "category": "FC2",
+      "mode": "information_withholding",
+      "reason": "handoff facts delay_days=0 but order lookup returned 4"
+    },
+    {
+      "run_id": "R-handoff_drops_delay-C-011-s33",
+      "shape": "handoff_drops_delay",
+      "claim_id": "C-011",
+      "seed": 33,
+      "benchmark_reason": "status denied != resolved",
+      "category": "FC2",
+      "mode": "information_withholding",
+      "reason": "handoff facts delay_days=0 but order lookup returned 4"
+    },
+    {
+      "run_id": "R-handoff_drops_delay-C-011-s44",
+      "shape": "handoff_drops_delay",
+      "claim_id": "C-011",
+      "seed": 44,
+      "benchmark_reason": "status denied != resolved",
+      "category": "FC2",
+      "mode": "information_withholding",
+      "reason": "handoff facts delay_days=0 but order lookup returned 4"
+    },
+    {
+      "run_id": "R-handoff_drops_delay-C-011-s55",
+      "shape": "handoff_drops_delay",
+      "claim_id": "C-011",
+      "seed": 55,
+      "benchmark_reason": "status denied != resolved",
+      "category": "FC2",
+      "mode": "information_withholding",
+      "reason": "handoff facts delay_days=0 but order lookup returned 4"
+    },
+    {
+      "run_id": "R-handoff_drops_delay-C-012-s11",
+      "shape": "handoff_drops_delay",
+      "claim_id": "C-012",
+      "seed": 11,
+      "benchmark_reason": "status denied != resolved",
+      "category": "FC2",
+      "mode": "information_withholding",
+      "reason": "handoff facts delay_days=0 but order lookup returned 4"
+    },
+    {
+      "run_id": "R-handoff_drops_delay-C-012-s22",
+      "shape": "handoff_drops_delay",
+      "claim_id": "C-012",
+      "seed": 22,
+      "benchmark_reason": "status denied != resolved",
+      "category": "FC2",
+      "mode": "information_withholding",
+      "reason": "handoff facts delay_days=0 but order lookup returned 4"
+    },
+    {
+      "run_id": "R-handoff_drops_delay-C-012-s33",
+      "shape": "handoff_drops_delay",
+      "claim_id": "C-012",
+      "seed": 33,
+      "benchmark_reason": "status denied != resolved",
+      "category": "FC2",
+      "mode": "information_withholding",
+      "reason": "handoff facts delay_days=0 but order lookup returned 4"
+    },
+    {
+      "run_id": "R-handoff_drops_delay-C-012-s44",
+      "shape": "handoff_drops_delay",
+      "claim_id": "C-012",
+      "seed": 44,
+      "benchmark_reason": "status denied != resolved",
+      "category": "FC2",
+      "mode": "information_withholding",
+      "reason": "handoff facts delay_days=0 but order lookup returned 4"
+    },
+    {
+      "run_id": "R-handoff_drops_delay-C-012-s55",
+      "shape": "handoff_drops_delay",
+      "claim_id": "C-012",
+      "seed": 55,
+      "benchmark_reason": "status denied != resolved",
+      "category": "FC2",
+      "mode": "information_withholding",
+      "reason": "handoff facts delay_days=0 but order lookup returned 4"
+    },
+    {
+      "run_id": "R-handoff_drops_delay-C-013-s11",
+      "shape": "handoff_drops_delay",
+      "claim_id": "C-013",
+      "seed": 11,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC2",
+      "mode": "information_withholding",
+      "reason": "handoff facts delay_days=0 but order lookup returned 4"
+    },
+    {
+      "run_id": "R-handoff_drops_delay-C-013-s22",
+      "shape": "handoff_drops_delay",
+      "claim_id": "C-013",
+      "seed": 22,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC2",
+      "mode": "information_withholding",
+      "reason": "handoff facts delay_days=0 but order lookup returned 4"
+    },
+    {
+      "run_id": "R-handoff_drops_delay-C-013-s33",
+      "shape": "handoff_drops_delay",
+      "claim_id": "C-013",
+      "seed": 33,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC2",
+      "mode": "information_withholding",
+      "reason": "handoff facts delay_days=0 but order lookup returned 4"
+    },
+    {
+      "run_id": "R-handoff_drops_delay-C-013-s44",
+      "shape": "handoff_drops_delay",
+      "claim_id": "C-013",
+      "seed": 44,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC2",
+      "mode": "information_withholding",
+      "reason": "handoff facts delay_days=0 but order lookup returned 4"
+    },
+    {
+      "run_id": "R-handoff_drops_delay-C-013-s55",
+      "shape": "handoff_drops_delay",
+      "claim_id": "C-013",
+      "seed": 55,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC2",
+      "mode": "information_withholding",
+      "reason": "handoff facts delay_days=0 but order lookup returned 4"
+    },
+    {
+      "run_id": "R-stale_policy-C-001-s11",
+      "shape": "stale_policy",
+      "claim_id": "C-001",
+      "seed": 11,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-001-s22",
+      "shape": "stale_policy",
+      "claim_id": "C-001",
+      "seed": 22,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-001-s33",
+      "shape": "stale_policy",
+      "claim_id": "C-001",
+      "seed": 33,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-001-s44",
+      "shape": "stale_policy",
+      "claim_id": "C-001",
+      "seed": 44,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-001-s55",
+      "shape": "stale_policy",
+      "claim_id": "C-001",
+      "seed": 55,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-002-s11",
+      "shape": "stale_policy",
+      "claim_id": "C-002",
+      "seed": 11,
+      "benchmark_reason": "status resolved != denied",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-002-s22",
+      "shape": "stale_policy",
+      "claim_id": "C-002",
+      "seed": 22,
+      "benchmark_reason": "status resolved != denied",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-002-s33",
+      "shape": "stale_policy",
+      "claim_id": "C-002",
+      "seed": 33,
+      "benchmark_reason": "status resolved != denied",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-002-s44",
+      "shape": "stale_policy",
+      "claim_id": "C-002",
+      "seed": 44,
+      "benchmark_reason": "status resolved != denied",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-002-s55",
+      "shape": "stale_policy",
+      "claim_id": "C-002",
+      "seed": 55,
+      "benchmark_reason": "status resolved != denied",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-006-s11",
+      "shape": "stale_policy",
+      "claim_id": "C-006",
+      "seed": 11,
+      "benchmark_reason": "status resolved != denied",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-006-s22",
+      "shape": "stale_policy",
+      "claim_id": "C-006",
+      "seed": 22,
+      "benchmark_reason": "status resolved != denied",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-006-s33",
+      "shape": "stale_policy",
+      "claim_id": "C-006",
+      "seed": 33,
+      "benchmark_reason": "status resolved != denied",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-006-s44",
+      "shape": "stale_policy",
+      "claim_id": "C-006",
+      "seed": 44,
+      "benchmark_reason": "status resolved != denied",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-006-s55",
+      "shape": "stale_policy",
+      "claim_id": "C-006",
+      "seed": 55,
+      "benchmark_reason": "status resolved != denied",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-007-s11",
+      "shape": "stale_policy",
+      "claim_id": "C-007",
+      "seed": 11,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-007-s22",
+      "shape": "stale_policy",
+      "claim_id": "C-007",
+      "seed": 22,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-007-s33",
+      "shape": "stale_policy",
+      "claim_id": "C-007",
+      "seed": 33,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-007-s44",
+      "shape": "stale_policy",
+      "claim_id": "C-007",
+      "seed": 44,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-007-s55",
+      "shape": "stale_policy",
+      "claim_id": "C-007",
+      "seed": 55,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-008-s11",
+      "shape": "stale_policy",
+      "claim_id": "C-008",
+      "seed": 11,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-008-s22",
+      "shape": "stale_policy",
+      "claim_id": "C-008",
+      "seed": 22,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-008-s33",
+      "shape": "stale_policy",
+      "claim_id": "C-008",
+      "seed": 33,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-008-s44",
+      "shape": "stale_policy",
+      "claim_id": "C-008",
+      "seed": 44,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-008-s55",
+      "shape": "stale_policy",
+      "claim_id": "C-008",
+      "seed": 55,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-009-s11",
+      "shape": "stale_policy",
+      "claim_id": "C-009",
+      "seed": 11,
+      "benchmark_reason": "status resolved != denied",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-009-s22",
+      "shape": "stale_policy",
+      "claim_id": "C-009",
+      "seed": 22,
+      "benchmark_reason": "status resolved != denied",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-009-s33",
+      "shape": "stale_policy",
+      "claim_id": "C-009",
+      "seed": 33,
+      "benchmark_reason": "status resolved != denied",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-009-s44",
+      "shape": "stale_policy",
+      "claim_id": "C-009",
+      "seed": 44,
+      "benchmark_reason": "status resolved != denied",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-009-s55",
+      "shape": "stale_policy",
+      "claim_id": "C-009",
+      "seed": 55,
+      "benchmark_reason": "status resolved != denied",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-010-s11",
+      "shape": "stale_policy",
+      "claim_id": "C-010",
+      "seed": 11,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-010-s22",
+      "shape": "stale_policy",
+      "claim_id": "C-010",
+      "seed": 22,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-010-s33",
+      "shape": "stale_policy",
+      "claim_id": "C-010",
+      "seed": 33,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-010-s44",
+      "shape": "stale_policy",
+      "claim_id": "C-010",
+      "seed": 44,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-010-s55",
+      "shape": "stale_policy",
+      "claim_id": "C-010",
+      "seed": 55,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-011-s11",
+      "shape": "stale_policy",
+      "claim_id": "C-011",
+      "seed": 11,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-011-s22",
+      "shape": "stale_policy",
+      "claim_id": "C-011",
+      "seed": 22,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-011-s33",
+      "shape": "stale_policy",
+      "claim_id": "C-011",
+      "seed": 33,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-011-s44",
+      "shape": "stale_policy",
+      "claim_id": "C-011",
+      "seed": 44,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-011-s55",
+      "shape": "stale_policy",
+      "claim_id": "C-011",
+      "seed": 55,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-012-s11",
+      "shape": "stale_policy",
+      "claim_id": "C-012",
+      "seed": 11,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-012-s22",
+      "shape": "stale_policy",
+      "claim_id": "C-012",
+      "seed": 22,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-012-s33",
+      "shape": "stale_policy",
+      "claim_id": "C-012",
+      "seed": 33,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-012-s44",
+      "shape": "stale_policy",
+      "claim_id": "C-012",
+      "seed": 44,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-012-s55",
+      "shape": "stale_policy",
+      "claim_id": "C-012",
+      "seed": 55,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-013-s11",
+      "shape": "stale_policy",
+      "claim_id": "C-013",
+      "seed": 11,
+      "benchmark_reason": "status resolved != denied",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-013-s22",
+      "shape": "stale_policy",
+      "claim_id": "C-013",
+      "seed": 22,
+      "benchmark_reason": "status resolved != denied",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-013-s33",
+      "shape": "stale_policy",
+      "claim_id": "C-013",
+      "seed": 33,
+      "benchmark_reason": "status resolved != denied",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-013-s44",
+      "shape": "stale_policy",
+      "claim_id": "C-013",
+      "seed": 44,
+      "benchmark_reason": "status resolved != denied",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-013-s55",
+      "shape": "stale_policy",
+      "claim_id": "C-013",
+      "seed": 55,
+      "benchmark_reason": "status resolved != denied",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-014-s11",
+      "shape": "stale_policy",
+      "claim_id": "C-014",
+      "seed": 11,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-014-s22",
+      "shape": "stale_policy",
+      "claim_id": "C-014",
+      "seed": 22,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-014-s33",
+      "shape": "stale_policy",
+      "claim_id": "C-014",
+      "seed": 33,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-014-s44",
+      "shape": "stale_policy",
+      "claim_id": "C-014",
+      "seed": 44,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-stale_policy-C-014-s55",
+      "shape": "stale_policy",
+      "claim_id": "C-014",
+      "seed": 55,
+      "benchmark_reason": "proposal_mismatch",
+      "category": "FC1",
+      "mode": "disobey_task_specification",
+      "reason": "quote read non-current policies ['POL-2025-01', 'POL-2027-03']"
+    },
+    {
+      "run_id": "R-ignores_host_result-C-007-s11",
+      "shape": "ignores_host_result",
+      "claim_id": "C-007",
+      "seed": 11,
+      "benchmark_reason": "status resolved != denied",
+      "category": "FC3",
+      "mode": "no_or_incomplete_verification",
+      "reason": "host refused (approval_expired) but the shape reported resolved"
+    },
+    {
+      "run_id": "R-ignores_host_result-C-007-s22",
+      "shape": "ignores_host_result",
+      "claim_id": "C-007",
+      "seed": 22,
+      "benchmark_reason": "status resolved != denied",
+      "category": "FC3",
+      "mode": "no_or_incomplete_verification",
+      "reason": "host refused (approval_expired) but the shape reported resolved"
+    },
+    {
+      "run_id": "R-ignores_host_result-C-007-s33",
+      "shape": "ignores_host_result",
+      "claim_id": "C-007",
+      "seed": 33,
+      "benchmark_reason": "status resolved != denied",
+      "category": "FC3",
+      "mode": "no_or_incomplete_verification",
+      "reason": "host refused (approval_expired) but the shape reported resolved"
+    },
+    {
+      "run_id": "R-ignores_host_result-C-007-s44",
+      "shape": "ignores_host_result",
+      "claim_id": "C-007",
+      "seed": 44,
+      "benchmark_reason": "status resolved != denied",
+      "category": "FC3",
+      "mode": "no_or_incomplete_verification",
+      "reason": "host refused (approval_expired) but the shape reported resolved"
+    },
+    {
+      "run_id": "R-ignores_host_result-C-007-s55",
+      "shape": "ignores_host_result",
+      "claim_id": "C-007",
+      "seed": 55,
+      "benchmark_reason": "status resolved != denied",
+      "category": "FC3",
+      "mode": "no_or_incomplete_verification",
+      "reason": "host refused (approval_expired) but the shape reported resolved"
+    },
+    {
+      "run_id": "R-ignores_host_result-C-013-s11",
+      "shape": "ignores_host_result",
+      "claim_id": "C-013",
+      "seed": 11,
+      "benchmark_reason": "status resolved != denied",
+      "category": "FC3",
+      "mode": "no_or_incomplete_verification",
+      "reason": "host refused (order_already_refunded) but the shape reported resolved"
+    },
+    {
+      "run_id": "R-ignores_host_result-C-013-s22",
+      "shape": "ignores_host_result",
+      "claim_id": "C-013",
+      "seed": 22,
+      "benchmark_reason": "status resolved != denied",
+      "category": "FC3",
+      "mode": "no_or_incomplete_verification",
+      "reason": "host refused (order_already_refunded) but the shape reported resolved"
+    },
+    {
+      "run_id": "R-ignores_host_result-C-013-s33",
+      "shape": "ignores_host_result",
+      "claim_id": "C-013",
+      "seed": 33,
+      "benchmark_reason": "status resolved != denied",
+      "category": "FC3",
+      "mode": "no_or_incomplete_verification",
+      "reason": "host refused (order_already_refunded) but the shape reported resolved"
+    },
+    {
+      "run_id": "R-ignores_host_result-C-013-s44",
+      "shape": "ignores_host_result",
+      "claim_id": "C-013",
+      "seed": 44,
+      "benchmark_reason": "status resolved != denied",
+      "category": "FC3",
+      "mode": "no_or_incomplete_verification",
+      "reason": "host refused (order_already_refunded) but the shape reported resolved"
+    },
+    {
+      "run_id": "R-ignores_host_result-C-013-s55",
+      "shape": "ignores_host_result",
+      "claim_id": "C-013",
+      "seed": 55,
+      "benchmark_reason": "status resolved != denied",
+      "category": "FC3",
+      "mode": "no_or_incomplete_verification",
+      "reason": "host refused (order_already_refunded) but the shape reported resolved"
+    }
+  ],
+  "agreement": {
+    "label_source": "group of the defect injected into each variant (hand-written mapping), not tagger output",
+    "labeled_trials": 101,
+    "accuracy": 1.0,
+    "cohens_kappa": 1.0,
+    "disagreements": []
+  }
+}
